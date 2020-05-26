@@ -1,7 +1,6 @@
 from jason import Jason
 import sys
 import hashlib
-import winsound
 
 jason = Jason()
 hash = sys.argv[1]
@@ -9,8 +8,6 @@ hash_type = Jason.detect_hash(hash)
 
 def success(password, hash_type):
     print(f"Password found: {password}, {hash_type}")
-    for i in [1, 1, 1]:
-        winsound.Beep(1500, 350)
     sys.exit()
 
 f = open("db.txt", "a")
